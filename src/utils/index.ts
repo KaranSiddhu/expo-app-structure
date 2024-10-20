@@ -1,7 +1,7 @@
-export const isArrayEmpty = (arr: Array<object | string | number>): boolean => {
-	return arr.length === 0;
+export const isObjectEmpty = (obj: unknown): boolean => {
+	return obj === null || (typeof obj === 'object' && Object.keys(obj || {}).length === 0);
 };
 
-export const isObjectEmpty = (obj: object): boolean => {
-	return Object.keys(obj).length === 0;
+export const isArrayEmpty = (arr: unknown): boolean => {
+	return arr === null || (Array.isArray(arr) && arr.length === 0);
 };
